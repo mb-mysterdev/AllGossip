@@ -17,3 +17,19 @@
       </div>
     </div>
   </div>
+
+    
+   <h1>un petit commentaire ? </h1>
+
+
+<%= form_for @comments do |f| %>
+<div>
+
+    <label> Content </label>
+    <%= f.text_field :content %>
+
+</div>
+
+
+<button class="btn " type="submit">Creer</button>
+<% end %>

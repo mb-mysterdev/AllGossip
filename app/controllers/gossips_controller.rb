@@ -10,6 +10,7 @@ class GossipsController < ApplicationController
     
       def show
         @id_gossips = Gossip.find(params['id'])
+        @comments = Comment.all
 
         # Méthode qui récupère le potin concerné et l'envoie à la view show (show.html.erb) pour affichage
       end
