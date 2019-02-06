@@ -1,6 +1,16 @@
 <h1>Editing Comment</h1>
 
+
+
+<% @comments.each do |comment| %>
+
+    <label> Content </label>
+
+    <input value="<%=  comment.content %>" type="text">
+
 <%= render 'form', comment: @comment %>
 
+
+<% end %>
 <%= link_to 'Show', @comment %> |
 <%= link_to 'Back', comments_path %>

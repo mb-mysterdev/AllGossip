@@ -22,14 +22,21 @@
    <h1>un petit commentaire ? </h1>
 
 
-<%= form_for @comments do |f| %>
+<%  @comment_set.each do |f| %>
 <div>
 
     <label> Content </label>
-    <%= f.text_field :content %>
+    <%= f.content %>
+    <%= f.id %>
 
 </div>
 
-
-<button class="btn " type="submit">Creer</button>
 <% end %>
+<%  @comment_author.each do |a| %>
+    <label> Author </label>
+
+  <%= a.first_name %><br>
+  <a class="btn " href="<%= edit_comment_path %>">Par la pour modifier </a>
+
+  <% end %>
+   <a class="btn " href="<%= new_comment_path %>">Commenter </a>

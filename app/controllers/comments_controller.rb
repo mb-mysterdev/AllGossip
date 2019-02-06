@@ -21,6 +21,11 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
+    @id_gossips = Gossip.find(params['id'])
+    @comment_set = Comment.where(gossip_id: @id_gossips)
+    @comments = Comment.where(id: @comment_set )
+
+
   end
 
   # POST /comments
