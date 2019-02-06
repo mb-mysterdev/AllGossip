@@ -1,0 +1,17 @@
+  <div class="row">
+
+    <div class="col s4">
+      <div class="card #00796b teal darken-2 ">
+
+        <div class="card-content white-text">
+          <span class="card-title"><%= @id_gossips.title %>, <%= @id_gossips.title %></span>
+          <p><%= @id_gossips.content %></p>
+        </div>
+        <div class="card-action">
+    <a  href="<%= user_path(@id_gossips.user_id)%>" class="btn btn-primary"  ><%= @id_gossips.user.first_name %> </a> <button class="btn"><a href="/gossips">Revenir en arriere</a></button>
+<a class="btn" href="<%= edit_gossip_path(@id_gossips.id) %>">Editer</a>
+    <div> <%= @id_gossips.created_at%>
+    </div>
+      </div>
+    </div>
+  </div>

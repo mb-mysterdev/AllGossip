@@ -1,0 +1,28 @@
+  
+   <h1>Creer des potins </h1>
+
+
+<%= form_for @gossip do |f| %>
+
+<div> 
+
+    <label> Titre </label>
+    <%= f.text_field :title %>
+
+</div>
+<div> 
+
+    <label> Content </label>
+    <%= f.text_field :content %>
+
+</div>
+<div > 
+
+    <label> user </label>
+    <%= f.text_field :user_id  %>
+
+</div>
+
+
+<button class="btn " type="submit">Creer</button>
+<% end %>

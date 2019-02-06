@@ -1,0 +1,2 @@
+class FirstNameTable < ApplicationRecord
+end

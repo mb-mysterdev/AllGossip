@@ -1,0 +1,33 @@
+<h1>Les Potins</h1>
+
+
+  <a class="btn" href="<%=  new_gossip_path %>">Creer un gossip</a>
+
+  <div class="row">
+  <% @gossips.each do |gossip| %>
+
+    <div class="col s4">
+      <div class="card #00796b teal darken-2 ">
+
+        <div class="card-content white-text">
+          <span class="card-title"><%= gossip.id %>, <%= gossip.title %></span>
+          <p><%= gossip.content %></p>
+        </div>
+        <div class="card-action">
+          <a href="#"><%= gossip.user.first_name %>, <%= gossip.user.last_name %></a>
+ 
+ <div>  <a href="<%= gossip_path(gossip.id) %>" class="btn btn-primary waves-teal">Afficher</a>
+ <a class="btn" href="<%= edit_gossip_path(gossip.id) %>">Editer</a>
+
+  <a class="btn red" href="<%= gossip_path(gossip.id) %>" data-method="DELETE" data-confirm="Vous êtes sur ????">Supprimer</a></div>
+
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+            
+
+
+
+
