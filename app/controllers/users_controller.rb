@@ -9,6 +9,8 @@ class UsersController < ApplicationController
       def show
         @users = User.all
         @id_users = User.find(params['id'])
+        @city = @id_users.city_id
+
         # Méthode qui récupère le potin concerné et l'envoie à la view show (show.html.erb) pour affichage
       end
     

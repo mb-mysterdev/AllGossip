@@ -4,8 +4,10 @@
       <div class="card #00796b teal darken-2 ">
 
         <div class="card-content white-text">
-          <span class="card-title"><%= @id_gossips.title %>, <%= @id_gossips.title %></span>
-          <p><%= @id_gossips.content %></p>
+          <span class="card-title">Title : <%= @id_gossips.title %>, <br> Author : <%= @id_gossips.user.first_name %></span>
+          <p>Content : <%= @id_gossips.content %></p>
+                  <p>City :  <%= @id_gossips.user.city.name %></p>
+
         </div>
         <div class="card-action">
     <a  href="<%= user_path(@id_gossips.user_id)%>" class="btn btn-primary"  ><%= @id_gossips.user.first_name %> </a> <button class="btn"><a href="/gossips">Revenir en arriere</a></button>

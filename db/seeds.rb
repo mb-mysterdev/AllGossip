@@ -25,7 +25,7 @@ Taggossip.destroy_all
 
 FirstNameTable.destroy_all
 
-10.times do 
+5.times do 
 
     city = City.create!(name: Faker::Address.city, zip_code:Faker::Address.zip_code)
 
@@ -34,7 +34,7 @@ FirstNameTable.destroy_all
 puts "10 villes ont été créées"
 
 
-10.times do
+5.times do
 
     user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: City.all.sample, description: Faker::MostInterestingManInTheWorld.quote, email: Faker::Internet.email , age: rand(18..80))
 
@@ -43,7 +43,7 @@ puts "10 villes ont été créées"
 puts "10 users ont été créés"
 
 
-20.times do
+5.times do
 
    gossip = Gossip.create!(title: Faker::Coffee.blend_name, content: Faker::MostInterestingManInTheWorld.quote, user: User.all.sample)
 
@@ -52,7 +52,7 @@ puts "10 users ont été créés"
 
 puts "20 gossips ont été créés"
 
-10.times do
+5.times do
 
    tag = Tag.create!(title: Faker::HarryPotter.spell)
 
@@ -61,7 +61,7 @@ puts "20 gossips ont été créés"
 puts "10 tags ont été créées"
 
 
-20.times do
+5.times do
 
    privatemessage = Privatemessage.create!(recipient: User.all.sample, sender: User.all.sample, content: Faker::MostInterestingManInTheWorld.quote)
 
@@ -71,7 +71,7 @@ puts "20 messages privés ont été créés"
 
 
 
-20.times do
+5.times do
 
    comment = Comment.create!(user: User.all.sample, content: Faker::MostInterestingManInTheWorld.quote, gossip: Gossip.all.sample)
 
@@ -79,7 +79,7 @@ puts "20 messages privés ont été créés"
 
 puts "20 comments ont été créés"
 
-20.times do
+5.times do
 
    like = Like.create!(user: User.all.sample, gossip: Gossip.all.sample)
 
@@ -88,7 +88,7 @@ puts "10 likes ont été créés"
 
 
 
-20.times do
+5.times do
 
    taggossip = Taggossip.create!(tag: Tag.all.sample, gossip: Gossip.all.sample)
 
@@ -96,7 +96,7 @@ puts "10 likes ont été créés"
 
 puts "20 tags ont été attribués aux gossips créés"
 
-20.times do
+5.times do
    first = FirstNameTable.create!(first_name: Faker::Name.name)
 
 
