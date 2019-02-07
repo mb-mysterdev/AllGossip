@@ -2,9 +2,10 @@ class GossipsController < ApplicationController
 
 
     def index
+         session[:user_id] = {first_name: 'Jonathon', id: 4}
 
         @gossips = Gossip.all
-
+        @session = session[:user_id]
         # Méthode qui récupère tous les potins et les envoie à la view index (index.html.erb) pour affichage
       end
     
