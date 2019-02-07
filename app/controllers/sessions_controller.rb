@@ -24,16 +24,20 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    @session = Session.new(session_params)
+    
 
-    respond_to do |format|
-      if @session.save
-        format.html { redirect_to @session, notice: 'Session was successfully created.' }
-        format.json { render :show, status: :created, location: @session }
-      else
-        format.html { render :new }
-        format.json { render json: @session.errors, status: :unprocessable_entity }
-      end
+     # cherche s'il existe un utilisateur en base avec l’e-mail
+    user = User.find_by(email:'email')
+  
+    # on vérifie si l'utilisateur existe bien ET si on arrive à l'authentifier (méthode bcrypt) avec le mot de passe 
+    if user && user.authenticate('password')
+      session[:user_id] = user.id
+      redirect_to gossips_path
+      # redirige où tu veux, avec un flash ou pas
+  
+    else
+      flash.now[:danger] = 'Invalid email/password combination'
+      render 'new'
     end
   end
 

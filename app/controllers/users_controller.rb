@@ -14,14 +14,33 @@ class UsersController < ApplicationController
       end
     
       def new
-        # Méthode qui crée un potin vide et l'envoie une view qui affiche le formulaire pour 'le remplir' (new.html.erb)
+        @user = User.last
       end
     
       def create
+
+      @user = User.new
+      @user.last_name = params['last_name']
+      @user.first_name = params['first_name']
+      @user.email = params['user_email']
+      @user.age = params['user_age']
+      @user.password = params['user_password']
+      @user.password_confirmation = params['password_confirmation']
+      @user.description = params['user_description']
+      @user.city_id = City.all.sample.id
+      
+      
+      if @user.save # essaie de sauvegarder en base @gossip
+       
+        redirect_to users_path
+        
+      else
+         render :template => 'users/new'# sinon, il render la view 
         # Méthode qui créé un potin à partir du contenu du formulaire de new.html.erb, soumis par l'utilisateur
         # pour info, le contenu de ce formulaire sera accessible dans le hash params (ton meilleur pote)
         # Une fois la création faite, on redirige généralement vers la méthode show (pour afficher le potin créé)
       end
+    end
     
       def edit
         # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition

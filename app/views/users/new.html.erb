@@ -1,0 +1,56 @@
+CREATION D'UN NOUVEL UTILISATEUR
+
+<div class="row m-3">
+	<% if @user.errors.any? %>
+	<div class="alert alert-danger" role="alert">
+	  <p>Nous n'avons pas réussi à créer l'utilisateur pour la (ou les) raison(s) suivante(s) :</p>
+	  <ul>
+	    <% @user.errors.full_messages.each do |message| %>
+	      <li><%= message %></li>
+	    <% end %>
+	  </ul>
+	  </div>
+      
+	<% end %>
+</div>
+<% if @i == "1" %>
+      <div class="alert alert-success" role="alert">
+	  <p> YEAH BRAAA</p>
+	  
+	  </div>
+      <% end %>
+      </div>
+
+
+<div class="row m-3">
+		<div class="col-sm-12 col-md-6 offset-md-3">
+		  <%= form_tag("/sessions", method: "post") do %>
+
+		  <%= label_tag(:last_name, "Surname:") %>
+		  <%= text_field_tag(:last_name, "", :class => 'form-control') %>
+		  <br>
+		  <%= label_tag(:first_name, "Name:") %>
+		  <%= text_field_tag(:first_name, "", :class => 'form-control') %>
+		  <br>
+          <%= label_tag(:user_email, "Mail:") %>
+		  <%= text_field_tag(:user_email, "", :class => 'form-control') %>
+		  <br>
+          <%= label_tag(:user_age, "Age:") %>
+		  <%= text_field_tag(:user_age, "", :class => 'form-control') %>
+		  <br>
+          
+          <%= label_tag(:user_password, "Password:") %>
+		  <%= text_field_tag(:user_password, "", :class => 'form-control') %>
+		  <br>
+          <%= label_tag(:password_confirmation, "Confirm it:") %>
+		  <%= text_field_tag(:password_confirmation, "", :class => 'form-control') %>
+		  <br>
+          <%= label_tag(:user_description, "Description:") %>
+		  <%= text_area_tag(:user_description, "", :class => 'form-control') %>
+		  <br>
+		  <%= submit_tag("Créer", :class => "btn btn-success") %>
+		  </div>
+	<% end %>
+</div>
+
+<div class="row m-3">

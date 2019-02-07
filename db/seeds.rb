@@ -23,7 +23,7 @@ Like.destroy_all
 
 Taggossip.destroy_all
 
-FirstNameTable.destroy_all
+
 
 5.times do 
 
@@ -31,16 +31,16 @@ FirstNameTable.destroy_all
 
    end
 
-puts "10 villes ont été créées"
+puts "5 villes ont été créées"
 
 
 5.times do
 
-    user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: City.all.sample, description: Faker::MostInterestingManInTheWorld.quote, email: Faker::Internet.email , age: rand(18..80))
+    user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, city: City.all.sample, description: Faker::MostInterestingManInTheWorld.quote, email: Faker::Internet.email , age: rand(18..80), password: Faker::Cannabis.cannabinoid)
 
     end
 
-puts "10 users ont été créés"
+puts "5 users ont été créés"
 
 
 5.times do
@@ -96,11 +96,7 @@ puts "10 likes ont été créés"
 
 puts "20 tags ont été attribués aux gossips créés"
 
-5.times do
-   first = FirstNameTable.create!(first_name: Faker::Name.name)
 
 
-  end
-
-  puts "20 tags ont été attribués aux gossips créés"
+  
 
